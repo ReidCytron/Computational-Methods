@@ -29,7 +29,7 @@ For i = 0 To a2
     Next j
 Next i
 
-Q = InputBox("Which Operation would you like to perform?  Type one of the options below." & vbCrLf & "Multiplication" & vbCrLf & "Division" & vbCrLf & "Subtraction" & vbCrLf & "Addition")
+Q = InputBox("Which Operation would you like to perform?" & vbCrLf & "Type one of the options below." & vbCrLf & "You must type one of the following options exactly." & vbCrLf & "Multiplication" & vbCrLf & "Division" & vbCrLf & "Subtraction" & vbCrLf & "Addition")
 
 If Q = "Multiplication" Then
     Call Multiplication(a1, b1, a2, b2)
@@ -93,21 +93,23 @@ If m1 <> n2 Then
 End If
 
 Dim QQ() As Variant
-ReDim QQ(n1, m1)
+ReDim QQ(n2, m2)
 Dim W() As Variant
 ReDim W(i, j)
 
 For i = 0 To n1
     For j = 0 To m1
-        X(i, j) = Int((9 * Rnd) + 1)
+        X(i, j) = Int((20 * Rnd) + 1)
     Next j
 Next i
 
-For i = 0 To n1
-    For j = 0 To m1
-        QQ(i, j) = Int((9 * Rnd) + 1)
+For i = 0 To n2
+    For j = 0 To m2
+        QQ(i, j) = Int((20 * Rnd) + 1)
     Next j
 Next i
+
+' I used the inverse function in order to complete the "Division"
 
 W() = Application.MInverse(QQ)
 
